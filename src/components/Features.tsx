@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Sparkles, Calendar, Users, MessageSquare, BarChart3, Shield } from "lucide-react";
+import { Sparkles, Calendar, Users, Instagram, BarChart3, Shield } from "lucide-react";
 
 const Features = () => {
   const containerVariants = {
@@ -26,50 +26,50 @@ const Features = () => {
   const features = [
     {
       icon: Sparkles,
-      title: "AI Assistant",
-      description: "Smart recommendations, automated client insights, and intelligent scheduling that learns your salon's patterns.",
+      title: "AI Hair Consultant",
+      description: "Smart color and style recommendations based on face shape, skin tone, and hair texture analysis.",
       gradient: "from-purple-500 to-purple-600",
       color: "text-purple-600"
     },
     {
       icon: Calendar,
-      title: "Smart Scheduling",
-      description: "Zero-conflict booking system with automated reminders, wait-list management, and optimal time slot suggestions.",
+      title: "Smart Salon Scheduling",
+      description: "Intelligent booking system that prevents double-bookings and optimizes stylist schedules for maximum efficiency.",
       gradient: "from-pink-500 to-pink-600",
       color: "text-pink-600"
     },
     {
       icon: Users,
-      title: "Client Profiles",
-      description: "Complete client history, preferences tracking, photo galleries, and personalized service recommendations.",
+      title: "Client Hair History",
+      description: "Complete hair journey tracking with photos, formulas, preferences, and allergy information for every client.",
       gradient: "from-blue-500 to-blue-600",
       color: "text-blue-600"
     },
     {
-      icon: MessageSquare,
-      title: "Instagram & SMS Automation",
-      description: "Automated marketing campaigns, appointment reminders, follow-ups, and social media integration.",
+      icon: Instagram,
+      title: "Instagram Booking Automation",
+      description: "Convert Instagram comments and DMs into confirmed appointments with automated response and scheduling.",
       gradient: "from-green-500 to-green-600",
       color: "text-green-600"
     },
     {
       icon: BarChart3,
-      title: "Revenue Analytics",
-      description: "Real-time business insights, performance tracking, revenue optimization, and growth recommendations.",
+      title: "Salon Analytics Dashboard",
+      description: "Track revenue per stylist, most popular services, client retention rates, and peak booking times.",
       gradient: "from-orange-500 to-orange-600",
       color: "text-orange-600"
     },
     {
       icon: Shield,
-      title: "Secure & Reliable",
-      description: "Bank-level security, automatic backups, 99.9% uptime guarantee, and GDPR compliance.",
+      title: "Secure Client Data",
+      description: "GDPR compliant client data protection with encrypted storage and automatic backup systems.",
       gradient: "from-indigo-500 to-indigo-600",
       color: "text-indigo-600"
     }
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="features" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -82,16 +82,16 @@ const Features = () => {
             className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
             variants={itemVariants}
           >
-            Everything Your Salon
+            Everything Your Hair Salon
             <span className="block text-transparent bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text">
-              Needs to Thrive
+              Needs to Succeed
             </span>
           </motion.h2>
           <motion.p 
             className="text-xl text-gray-600 max-w-3xl mx-auto"
             variants={itemVariants}
           >
-            Powerful features designed specifically for hair salons, from solo stylists to multi-location chains
+            From solo stylists to multi-location salons, our AI-powered platform streamlines every aspect of your hair business
           </motion.p>
         </motion.div>
 
@@ -132,8 +132,8 @@ const Features = () => {
           variants={itemVariants}
         >
           <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-center text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Salon?</h3>
-            <p className="text-xl mb-8 opacity-90">Join thousands of salon owners who've revolutionized their business with SalonAI</p>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Hair Salon?</h3>
+            <p className="text-xl mb-8 opacity-90">Join thousands of stylists who've revolutionized their salon business with SalonAI</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 className="px-8 py-4 bg-white text-purple-600 rounded-lg hover:bg-gray-100 transition-all font-semibold text-lg"

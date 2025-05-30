@@ -6,7 +6,7 @@ import DashboardPreviews from '@/components/DashboardPreviews';
 import PricingPlans from '@/components/PricingPlans';
 import Testimonials from '@/components/Testimonials';
 import AIChatPreview from '@/components/AIChatPreview';
-import BlogPreview from '@/components/BlogPreview';
+import InstagramRequests from '@/components/InstagramRequests';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';
 
@@ -31,10 +31,10 @@ const Index = () => {
       <Hero />
       <Features />
       <DashboardPreviews />
+      <InstagramRequests />
       <PricingPlans />
       <Testimonials />
       <AIChatPreview />
-      <BlogPreview />
     </PageLayout>
   );
 };

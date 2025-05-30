@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
@@ -108,11 +108,13 @@ const Navbar = () => {
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
-                  <Link to="/blog">
-                    <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-white/10")}>
-                      Blog
-                    </NavigationMenuLink>
-                  </Link>
+                  <button
+                    onClick={() => scrollToSection('instagram-requests')}
+                    className={cn(navigationMenuTriggerStyle(), isScrolled ? "text-gray-700 hover:text-gray-900" : "text-gray-100 hover:text-white bg-transparent hover:bg-white/10", "flex items-center gap-1")}
+                  >
+                    <Instagram size={16} />
+                    Instagram
+                  </button>
                 </NavigationMenuItem>
                 
                 <NavigationMenuItem>
@@ -126,7 +128,7 @@ const Navbar = () => {
                 
                 <NavigationMenuItem>
                   <button onClick={() => scrollToSection('contact')} className={cn("px-6 py-2 rounded-lg transition-colors font-medium", isScrolled ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700" : "bg-white text-purple-600 hover:bg-gray-100")}>
-                    Get Started
+                    Book Demo
                   </button>
                 </NavigationMenuItem>
               </NavigationMenuList>
@@ -166,12 +168,13 @@ const Navbar = () => {
             Pricing
           </button>
           
-          <Link to="/blog" className={cn("block px-3 py-2 rounded-md", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-white/10")} onClick={() => {
-            setIsMenuOpen(false);
-            window.scrollTo(0, 0);
-          }}>
-            Blog
-          </Link>
+          <button
+            onClick={() => scrollToSection('instagram-requests')}
+            className={cn("flex items-center gap-2 w-full text-left px-3 py-2 rounded-md", isScrolled ? "text-gray-700 hover:bg-gray-50" : "text-gray-200 hover:bg-white/10")}
+          >
+            <Instagram size={16} />
+            Instagram
+          </button>
           
           <button
             onClick={() => scrollToSection('testimonials')}
@@ -181,7 +184,7 @@ const Navbar = () => {
           </button>
           
           <button onClick={() => scrollToSection('contact')} className={cn("block w-full text-left px-3 py-2 rounded-md font-medium", isScrolled ? "text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" : "text-purple-600 bg-white hover:bg-gray-100")}>
-            Get Started
+            Book Demo
           </button>
         </div>
       </div>
