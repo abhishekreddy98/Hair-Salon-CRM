@@ -15,7 +15,6 @@ export interface Appointment {
   // Joined data
   clients?: { name: string; email: string | null; phone: string | null };
   services?: { name: string; price: number; duration: number };
-  profiles?: { first_name: string | null; last_name: string | null };
 }
 
 export const useAppointments = () => {
@@ -30,8 +29,7 @@ export const useAppointments = () => {
         .select(`
           *,
           clients (name, email, phone),
-          services (name, price, duration),
-          profiles!stylist_id (first_name, last_name)
+          services (name, price, duration)
         `)
         .order('appointment_datetime', { ascending: true });
 
@@ -56,7 +54,7 @@ export const useAppointments = () => {
     }
   };
 
-  const addAppointment = async (appointmentData: Omit<Appointment, 'id' | 'created_at' | 'updated_at' | 'clients' | 'services' | 'profiles'>) => {
+  const addAppointment = async (appointmentData: Omit<Appointment, 'id' | 'created_at' | 'updated_at' | 'clients' | 'services'>) => {
     try {
       const { data, error } = await supabase
         .from('appointments')
