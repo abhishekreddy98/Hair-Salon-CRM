@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -32,7 +31,7 @@ export const useAppointments = () => {
           *,
           clients (name, email, phone),
           services (name, price, duration),
-          profiles!appointments_stylist_id_fkey (first_name, last_name)
+          profiles!stylist_id (first_name, last_name)
         `)
         .order('appointment_datetime', { ascending: true });
 
