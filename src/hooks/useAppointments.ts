@@ -37,7 +37,14 @@ export const useAppointments = () => {
         .order('appointment_datetime', { ascending: true });
 
       if (error) throw error;
-      setAppointments(data || []);
+      
+      // Type the data properly to match our Appointment interface
+      const typedData = (data || []).map(item => ({
+        ...item,
+        status: item.status as Appointment['status']
+      })) as Appointment[];
+      
+      setAppointments(typedData);
     } catch (error) {
       console.error('Error fetching appointments:', error);
       toast({
