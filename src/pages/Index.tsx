@@ -9,8 +9,13 @@ import AIChatPreview from '@/components/AIChatPreview';
 import InstagramRequests from '@/components/InstagramRequests';
 import SEO from '@/components/SEO';
 import { useEffect } from 'react';
+import { useAuth } from '@/contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
   // Fix any ID conflicts when the page loads
   useEffect(() => {
     const contactElements = document.querySelectorAll('[id="contact"]');
@@ -19,6 +24,13 @@ const Index = () => {
       contactElements[1].id = 'contact-footer';
     }
   }, []);
+
+  // Redirect authenticated users to dashboard
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   return (
     <PageLayout>
